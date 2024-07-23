@@ -1,0 +1,21 @@
+{
+    "name": "cmrweb/unity_web_request",
+    "description": "unity web request helper",
+    "autoload": {
+        "psr-4": {
+            "Cmrweb\\UnityWebRequest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "cmrweb",
+            "email": "tykrastagames@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/http-foundation": "7.2.x-dev",
+        "symfony/dependency-injection": "7.2.x-dev",
+        "symfony/dotenv": "7.2.x-dev"
+    }
+}
