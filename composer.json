@@ -12,6 +12,7 @@
             "email": "tykrastagames@gmail.com"
         }
     ], 
+    "minimum-stability": "stable",
     "require": {
         "symfony/http-foundation": "7.2.x-dev",
         "symfony/dependency-injection": "7.2.x-dev",
