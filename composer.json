@@ -13,7 +13,7 @@
         }
     ], 
     "minimum-stability": "stable",
-    "require": {
+    "require-dev": {
         "symfony/http-foundation": "7.*",
         "symfony/dependency-injection": "7.*",
         "symfony/dotenv": "7.*"
