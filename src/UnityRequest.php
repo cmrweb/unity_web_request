@@ -5,13 +5,13 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-class RequestHelper
+abstract class UnityWebRequest implements UnityWebRequestInterface
 {
     public function __construct(
         private readonly ParameterBagInterface $param
     ){}
 
-    public function handleRequest(Request $request)
+    public function handleRequest(Request $request): JsonResponse|\Exception
     { 
         if (!$request->isMethod('POST')) {
             throw new \Exception('invalid request');
@@ -22,24 +22,5 @@ class RequestHelper
         } 
         unset($data->token);
         return $this->handleSuccess($data);
-    }
-
-    private function handleSuccess(object $data): JsonResponse
-    {
-        ###> do something ###
-        if(!isset($data->field)) {
-            return $this->handleError('invalid field is missing');
-        }
-        if(empty($data->field)) {
-            return $this->handleError('field cannot be empty'); 
-        }
-        $data->responseField = 'data added from server';
-        ###< do something ### 
-        return new JsonResponse(['Data'=>$data]);
-    }
-
-    private function handleError(string $message): JsonResponse
-    {
-        return new JsonResponse(['Error' => $message]);
     }
 }
