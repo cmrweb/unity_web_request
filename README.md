@@ -36,3 +36,19 @@ class UnityRequestHandlerService extends UnityRequest
 }
 
 ```
+
+.env file
+
+```
+###> cmrweb/unity_web_request ###
+UNITY_REQUEST_TOKEN='mySuperSecretToken'
+###< cmrweb/unity_web_request ###
+
+```
+
+config/services.yaml
+
+```
+parameters:
+    unity_request_token: '%env(UNITY_REQUEST_TOKEN)%'
+```
