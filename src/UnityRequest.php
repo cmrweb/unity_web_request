@@ -1,11 +1,11 @@
 <?php
 namespace Cmrweb\UnityWebRequest;
-
+ 
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
-abstract class UnityWebRequest implements UnityWebRequestInterface
+abstract class UnityRequest implements UnityRequestInterface
 {
     public function __construct(
         private readonly ParameterBagInterface $param
