@@ -14,8 +14,13 @@
     ], 
     "minimum-stability": "stable",
     "require-dev": {
+        "symfony/maker-bundle": "^1.60"
+    },
+    "require": {
         "symfony/http-foundation": "7.*",
         "symfony/dependency-injection": "7.*",
-        "symfony/dotenv": "7.*"
+        "symfony/dotenv": "7.*",
+        "symfony/console": "^7.1",
+        "symfony/orm-pack": "^2.4"
     }
 }
