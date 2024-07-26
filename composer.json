@@ -25,7 +25,9 @@
         "symfony/yaml": "^7.1"
     },
     "scripts": {
-        "post-install-cmd": "composer cmrweb:unity",
-        "cmrweb:unity": "Cmrweb\\UnityWebRequest\\Install\\UnityWebRequestInstaller::install"
+        "cmrweb:unity": "Cmrweb\\UnityWebRequest\\Install\\UnityWebRequestInstaller::install",
+        "post-install-cmd": [ 
+            "@cmrweb:unity"
+        ]
     }
 }
