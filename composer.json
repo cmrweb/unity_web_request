@@ -12,7 +12,7 @@
             "email": "tykrastagames@gmail.com"
         }
     ], 
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require-dev": {
         "symfony/maker-bundle": "^1.60"
     },
