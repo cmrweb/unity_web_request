@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 class UnityEntityCommand extends Command
 {
     private SymfonyStyle $io;
-    private string $cacheDir;
+    private string $projectDir;
     private const ACCEPTED_TYPES = ['int', 'string', 'float', 'bool'];
 
     public function __construct( 
@@ -27,7 +27,7 @@ class UnityEntityCommand extends Command
         private readonly UnityEntityMapper $unityEntityMapper
     ) {
         parent::__construct();
-        $this->cacheDir = $this->kernel->getProjectDir() . '/assets/unity/'; 
+        $this->projectDir = $this->kernel->getProjectDir() . '/assets/unity/'; 
     }
 
     protected function configure(): void
@@ -95,7 +95,7 @@ class UnityEntityCommand extends Command
             # end loop  
             # create C# script
             $file = new Filesystem();   
-            $path = $this->cacheDir . $className . '.cs';
+            $path = $this->projectDir . $className . '.cs';
             if($file->exists($path)) {
                 $file->remove($path);
             }
